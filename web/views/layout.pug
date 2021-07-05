@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+  head
+    meta( charset="utf-8" )
+    meta( name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" )
+    meta( name="description" content="A personal webpage" )
+    link( rel="preconnect" href="https://fonts.gstatic.com")
+    //- link( rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"  )
+    link( rel="stylesheet" href="https://fonts.googleapis.com/css2?family=K2D&family=Roboto&display=swap" )
+    //- link( rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono|Muli" )
+    link( rel="stylesheet", href="/styles/bootstrap.min.css"  )
+    
+    // build:css /styles/index.min.css
+    link( rel='stylesheet', href='/styles/index.css'  )
+    // endbuild
+    
+    title= `${about.name} - Home`
+  //- body(class="dot-bg")
+  body(class="grid-dot-bg")
+
+    // Skip to Main Content
+    a(class="visually-hidden-focusable" href="#main-content") Skip to main content
+
+    // Site Header
+    header(id="site-header" class="site-header fixed-top" role="banner")
+      include ./includes/top-nav.pug
+    
+    // Page Content
+    main(id="main-content" class="site-main" role="main")
+      block content
+
+    // Call To Action
+    include ./includes/cta
+
+    // Footer Decoration
+    div(class="footer-deco d-flex")
+      //- <svg  class="deco-svg" viewBox="0 0 317.5 15.875">
+      //-   <g transform="translate(-9.306e-7 -281.12)">
+      //-     <path d="m9.306e-7 297v-15.875c55.496 10.461 108.99 16.934 159.37 6.2744 52.87 11.003 105.26 5.1232 158.13-6.2744v15.875z" stroke-width=".44901"/>
+      //-   </g>
+      //- </svg>
+      //- <svg class="deco-svg" viewBox="0 0 317.5 15.875"><path d="M0 15.88V.005c55.496 10.461 108.99 16.934 159.37 6.274C212.24 17.282 264.63 11.403 317.5.005V15.88z"/></svg>
+      <svg class="deco-svg" viewBox="0 0 317.5 7.938"><path d="M0 7.94V.002C55.496 5.232 108.99 8.47 159.37 3.14 212.24 8.64 264.63 5.7 317.5.002V7.94z"/></svg>
+      //- <svg class="deco-svg" viewBox="0 0 317.5 7.9375">
+      //-   <g transform="translate(-9.306e-7 -289.06)">
+      //-     <path d="m9.306e-7 297v-7.9375c55.496 5.2304 108.99 8.4672 159.37 3.1372 52.87 5.5013 105.26 2.5616 158.13-3.1372v7.9375z" stroke-width=".3175"/>
+      //-   </g>
+      //- </svg>
+
+    // Site Footer
+    footer(id="site-footer" class="site-footer" role="contentinfo")
+      include ./includes/footer-nav
+      //- include ./includes/bubble-anim.pug
+
+    // Scripts
+    script(src="/scripts/bootstrap.bundle.min.js")
+
+    //- // build:js /scripts/index.min.js defer
+    //- script(src="/scripts/index.js")
+    //- // endbuild

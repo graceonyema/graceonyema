@@ -8,12 +8,12 @@
   "main": "app.js",
   "scripts": {
     "build": "npm-run-all build:pug build:dist",
-    "build:pug": "pug -w -O web/data/siteData.json web/views/index.pug -o web/src -P",
+    "build:pug": "pug -w -O data.json web/views/index.pug -o web/src -P",
     "build:dist": "gulp",
     "build:image": "gulp imageOp",
-    "dev": "npm-run-all --parallel serve:dev build:pug",    
+    "dev": "npm-run-all --parallel serve:dev build:pug",
     "lint": "eslint .",
-    "serve:dev": "set DEBUG=app:* & nodemon dev-server.js",
+    "serve:dev": "set DEBUG=app:* & nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

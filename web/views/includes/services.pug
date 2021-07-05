@@ -1,0 +1,9 @@
+// Services
+section(id="services" class="section")
+  .container-fluid.container-md
+    h2(class="title sub-title")
+      span Services
+    div(class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 py-5")
+      each service in services
+        +offerCard(service)
+    button(class="btn btn-main")    Learn More

@@ -1,0 +1,67 @@
+.container-fluid.container-md
+  nav(class="navbar navbar-expand-md p-0")
+  
+    // site logo
+    a(class="navbar-brand" href="/")
+      div(class="site-logo")
+        img(
+          class="img-fluid"
+          src=`/images/${about.logo}`
+          alt=""
+          width="50"
+          height="50"
+        )
+      //- <svg width="48" height="48" version="1.1" viewBox="0 0 26.458 26.458" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:xlink="http://www.w3.org/1999/xlink">
+      //-   <g transform="translate(-36.64 -130.15)">
+      //-     <text transform="scale(1.0803 .92564)" x="39.345348" y="162.3405" fill="#790003" font-family="'Imprint MT Shadow'" font-size="35.402px" letter-spacing="0px" stroke-width=".88506" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="39.345348" y="162.3405" fill="#790003" stroke-width=".88506">s</tspan></text>
+      //-     <path transform="matrix(1.2827 0 0 1.2827 -6.3686 65.927)" d="m52.641 65.743-13.515 3.7966 12.741-2.6944-13.895 2.0001 12.983-1.0084-14.037 0.16935 13.004 0.69488-13.939-1.6643 12.802 2.3863-13.603-3.4695 12.381 4.0369-13.033-5.2153 11.748 5.6183-12.241-6.8719 10.914 7.1037-11.239-8.4109 9.8936 8.4675-10.045-9.806 8.7038 9.6865-8.6796-11.033 7.365 10.74-7.1652-12.072 5.9001 11.609-5.5282-12.904 4.3344 12.28-3.7966-13.515 2.6944 12.741-2.0001-13.895 1.0084 12.983-0.16935-14.037-0.69488 13.004 1.6643-13.939-2.3863 12.802 3.4695-13.603-4.0369 12.381 5.2153-13.033-5.6183 11.748 6.8719-12.241-7.1037 10.914 8.4109-11.239-8.4675 9.8936 9.806-10.045-9.6865 8.7038 11.033-8.6796-10.74 7.365 12.072-7.1652-11.609 5.9001 12.904-5.5282-12.28 4.3344 13.515-3.7966-12.741 2.6944 13.895-2.0001-12.983 1.0084 14.037-0.16935-13.004-0.69488 13.939 1.6643-12.802-2.3863 13.603 3.4695-12.381-4.0369 13.033 5.2153-11.748-5.6183 12.241 6.8719-10.914-7.1037 11.239 8.4109-9.8936-8.4675 10.045 9.806-8.7038-9.6865 8.6796 11.033-7.365-10.74 7.1652 12.072-5.9001-11.609 5.5282 12.904-4.3344-12.28 3.7966 13.515-2.6944-12.741 2.0001 13.895-1.0084-12.983 0.16935 14.037 0.69488-13.004-1.6643 13.939 2.3863-12.802-3.4695 13.603 4.0369-12.381-5.2153 13.033 5.6183-11.748-6.8719 12.241 7.1037-10.914-8.4109 11.239 8.4675-9.8936-9.8059 10.045 9.6865-8.7038-11.033 8.6796 10.74-7.365-12.072 7.1652 11.609-5.9001-12.904 5.5282z" color="#000000" fill="none" stroke="#910003" stroke-opacity=".85859" stroke-width=".05016" style="paint-order:normal"/>
+      //-     <flowRoot transform="matrix(.26458 0 0 .26458 36.64 130.15)" fill="#000000" font-family="sans-serif" font-size="40px" letter-spacing="0px" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><flowRegion><rect x="33.915" y="30.233" width="26.744" height="40.31"/></flowRegion><flowPara>sss</flowPara></flowRoot>
+      //-   </g>
+      //- </svg>
+
+    // menu dropdown toggle
+    button(class="btn d-md-none" type="button" id="menu-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false" aria-label="Toggle navigation")
+      span(class="visually-hidden") Menu
+      <svg class="bi" width="2em" height="2em" viewBox="0 0 4.233 3.464" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><radialGradient id="c" cx="87.879" cy="147.09" r="127.19" gradientTransform="matrix(.01075 .00013 -.00001 .00184 83.549 106.97)" gradientUnits="userSpaceOnUse"><stop stop-color="currentcolor" stop-opacity="0" offset="0"/><stop stop-color="currentcolor" offset="1"/></radialGradient><radialGradient id="b" cx="87.879" cy="84.429" r="98.75" gradientTransform="matrix(.00888 .00026 -.00003 .0021 83.714 105.57)" gradientUnits="userSpaceOnUse" xlink:href="#a"/><radialGradient id="d" cx="87.879" cy="209.74" r="98.75" gradientTransform="matrix(.01114 .00018 -.00002 .00224 83.516 108.23)" gradientUnits="userSpaceOnUse" xlink:href="#a"/><linearGradient id="a"><stop stop-color="currentcolor" stop-opacity="0" offset="0"/><stop stop-color="currentcolor" offset="1"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width=".518" paint-order="stroke markers fill"><path d="M83.101 105.78h2.78" stroke="url(#b)" transform="translate(-82.375 -105.52)"/><path d="M82.638 107.25h3.708" stroke="url(#c)" transform="translate(-82.375 -105.52)"/><path d="M83.101 108.72h2.78" stroke="url(#d)" transform="translate(-82.375 -105.52)"/></g></svg>
+
+
+    // navigation
+    div(id="nav-menu" class="collapse navbar-collapse justify-content-end")
+      ul(class="navbar-nav")
+        //- li.nav-item
+        //-   a(class="nav-link header-link" href="/") Home
+        li.nav-item
+          a(class="nav-link header-link" href="#about") About
+        li.nav-item
+          a(class="nav-link header-link" href="#services") Services
+        li.nav-item
+          a(class="nav-link header-link" href="#portfolio") Portfolio
+        //- li.nav-item
+          a(class="nav-link header-link" href="#") Blog
+        li.nav-item
+            a(class="nav-link header-link" href="#contact") Contact Me
+
+    // mobile navigation menu
+    div(id="mobile-nav-menu" class="dropdown-menu mobile-menu d-md-none") 
+      //- div(class="offcanvas-header")
+      div(class="offcanvas-header justify-content-end")
+        //- h5(id="menuLabel" class="offcanvas-title text-light")    Menu
+        button(class="btn" type="button" data-bs-dismiss="offcanvas" title="Close")
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+          </svg>
+
+      div( class="offcanvas-body")
+        ul(class="list-unstyled navbar-nav text-center")
+          //- li.nav-item
+              a(class="nav-link sidebar-link" href="/") Home
+          li.nav-item
+            a(class="nav-link sidebar-link" href="#about") About
+          li.nav-item
+            a(class="nav-link sidebar-link" href="#services") Services
+          li.nav-item
+            a(class="nav-link sidebar-link" href="#portfolio") Portfolio
+          //- li.nav-item
+            a(class="nav-link sidebar-link" href="#") Blog
+          li.nav-item
+            a(class="nav-link sidebar-link" href="#contact") Contact Me
