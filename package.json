@@ -7,14 +7,16 @@
   },
   "main": "app.js",
   "scripts": {
-    "build": "npm-run-all pug build:dist",
-    "build:pug": "pug -w -O data.js web/views/pages/ -o web/src -P",
-    "build:dist": "gulp",
-    "build:image": "gulp imageOp",
-    "dev": "npm-run-all --parallel serve:dev build:pug",
+    "build": "npm-run-all pug build-dist",
+    "watch-pug": "pug -w -O data.js web/views/pages/ -o web/src -P",
+    "build-dist": "gulp",
+    "build-image": "gulp imageOp",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d web/dist",
+    "dev": "npm-run-all --parallel serve-dev watch-pug",
     "lint": "eslint .",
     "pug": "pug -O data.js web/views/pages/ -o web/src -P",
-    "serve:dev": "set DEBUG=app:* & nodemon app.js",
+    "serve-dev": "set DEBUG=app:* & nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -42,6 +44,7 @@
   "devDependencies": {
     "del": "^6.0.0",
     "eslint": "^7.25.0",
+    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
