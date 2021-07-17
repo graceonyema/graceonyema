@@ -1,0 +1,50 @@
+mixin testimonialCard(testimonials)
+
+    each testimonial, index in testimonials
+      //- div #{index} #{testimonial.author} #{index==0}
+      if index==0
+        div(class="carousel-item active")
+          figure(class="card testimonial-card")
+            div(class="card-header border-0 d-flex justify-content-between")
+              if testimonial.avatar!=""
+                img(
+                  src=`/images/${testimonial.avatar}`
+                  class="avatar"
+                  alt=`an image of ${testimonial.author}`
+                  width="60"
+                  height="60"
+                  loading="lazy"
+                )
+              else 
+                .avatar.rounded-circle  #{testimonial.initials}
+              figcaption  
+                p(class="m-0 card-title title author")  #{testimonial.author}
+                p(class="m-0 text-muted small")  #{testimonial.desc}
+            div(class="card-body ps-5")
+              blockquote= testimonial.comment
+            div(class="card-footer border-0")
+              p(class="m-0 text-muted small") #{testimonial.type}
+            
+      else
+        div(class="carousel-item")
+          figure(class="card testimonial-card")
+            div(class="card-header border-0 d-flex justify-content-between")
+              if testimonial.avatar!=""
+                img(
+                  src=`/images/${testimonial.avatar}`
+                  class="avatar"
+                  alt=`an image of ${testimonial.author}`
+                  width="60"
+                  height="60"
+                  loading="lazy"
+                )
+              else 
+                .avatar.rounded-circle  #{testimonial.initials}
+              figcaption  
+                p(class="m-0 card-title title author")  #{testimonial.author}
+                p(class="m-0 text-muted small")  #{testimonial.desc}
+            div(class="card-body ps-5")
+              blockquote= testimonial.comment
+            div(class="card-footer border-0")
+              p(class="m-0 text-muted small") #{testimonial.type}
+              

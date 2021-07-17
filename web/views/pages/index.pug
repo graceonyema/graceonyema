@@ -1,0 +1,51 @@
+extends ../layout
+include ../mixins/_offerCard
+include ../mixins/_testimonialCard
+include ../mixins/_info
+include ../mixins/_nav
+
+block title
+  +info("Home")
+
+block header
+  +nav("home")
+
+block content
+
+  // Ad Pane
+  div(id="promo" class="top-ad")
+
+  // Hero
+  section(id="about" class="jombotron jumbotron-fluid")
+    .container-fluid.container-lg
+      //- .row.row-cols-1.row-cols-sm-2
+      .row
+        .col-12.col-md-6.d-flex
+          div(class="img-container mb-4 m-auto")
+            img(
+              class="img-fluid"
+              src=`/images/${picture}`
+              alt=`An image of ${title}`
+              width="650"
+              height="650"
+            )
+        .col-12.col-md-6
+          div(class="container")
+            h1(class="title") #{header}
+            //- p(id="profession" class="fade-in profession fs-5") #{work}
+            p(id="profession" class="fade-in profession") #{work}
+            
+            a(class="btn btn-cta" href="/about") Read More
+
+      //- include ./includes/snow-anim.pug
+
+
+  include ../includes/services
+
+
+  // Resources
+  include ../includes/resources
+
+  //- include ./includes/portfolio
+
+  include ../includes/testimonials

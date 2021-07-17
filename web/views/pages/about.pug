@@ -1,0 +1,33 @@
+extends ../layout
+include ../mixins/_info
+include ../mixins/_nav
+
+block title
+  +info("About")
+
+block header
+  +nav("about")
+
+block content
+  section.section
+    .container
+      h1.title.text-center.mb-5
+        span.sub-title About me 
+
+      .row.py-5
+        .col-12.d-flex
+          div(class="img-container mb-4 m-auto")
+            img(
+              class="img-fluid"
+              src=`/images/${picture}`
+              alt=`An image of ${title}`
+              width="650"
+              height="650"
+            )
+        .col-12
+          div(class="container")
+            if about.paragraphs
+              each paragraph in about.paragraphs
+                p   #{paragraph.text}
+            else
+              p   #{work}

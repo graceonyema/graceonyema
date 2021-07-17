@@ -1,0 +1,21 @@
+extends ../layout
+include ../mixins/_serviceCard
+include ../mixins/_info
+include ../mixins/_nav
+
+block title
+  +info("Services")
+
+block header
+  +nav("services")
+
+block content
+  section.section
+    .container-fluid.container-lg
+      h1.title.text-center.mb-5
+        span.sub-title   Work with me 
+
+      //- div(class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 py-5")
+      div(class="row row-cols-1 row-cols-lg-2 g-4 py-5")
+        each service in services
+          +serviceCard(service)

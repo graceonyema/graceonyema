@@ -1,0 +1,23 @@
+mixin offerCard(offer)
+  .col
+    div(class="card")
+      div
+        img(
+          src=`/images/${offer.poster}`
+          class="card-img-top p-2"
+          alt=`an image of ${offer.poster}`
+          width="200"
+          height="150"
+          loading="lazy"
+        )
+      if offer.cta
+        div(class="card-body")
+          h4(class="card-title title")
+            span.sub-title   #{offer.title}
+          p(class="card-text")= offer.description
+          button(id="view-btn" class="btn")= offer.cta
+      else
+        div(class="card-body")
+          h4(class="card-title title")
+            span.sub-title   #{offer.title}
+          p(class="card-text")= offer.description
