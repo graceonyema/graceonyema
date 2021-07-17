@@ -2,11 +2,11 @@
   nav(class="navbar navbar-expand-md p-0")
   
     // site logo
-    a(class="navbar-brand" href="/")
+    a(class="navbar-brand" href="/" title=`${name}`)
       div(class="site-logo")
         img(
           class="img-fluid"
-          src=`/images/${about.logo}`
+          src=`/images/${logo}`
           alt=""
           width="50"
           height="50"
@@ -19,49 +19,23 @@
       //-   </g>
       //- </svg>
 
-    // menu dropdown toggle
-    button(class="btn d-md-none" type="button" id="menu-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false" aria-label="Toggle navigation")
-      span(class="visually-hidden") Menu
+    // menu side navigation toggle
+    button(class="navbar-toggler btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#side-nav" aria-controls="side-nav" title="Toggle Menu")
+      //- span(class="visually-hidden") Menu
       <svg class="bi" width="2em" height="2em" viewBox="0 0 4.233 3.464" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><radialGradient id="c" cx="87.879" cy="147.09" r="127.19" gradientTransform="matrix(.01075 .00013 -.00001 .00184 83.549 106.97)" gradientUnits="userSpaceOnUse"><stop stop-color="currentcolor" stop-opacity="0" offset="0"/><stop stop-color="currentcolor" offset="1"/></radialGradient><radialGradient id="b" cx="87.879" cy="84.429" r="98.75" gradientTransform="matrix(.00888 .00026 -.00003 .0021 83.714 105.57)" gradientUnits="userSpaceOnUse" xlink:href="#a"/><radialGradient id="d" cx="87.879" cy="209.74" r="98.75" gradientTransform="matrix(.01114 .00018 -.00002 .00224 83.516 108.23)" gradientUnits="userSpaceOnUse" xlink:href="#a"/><linearGradient id="a"><stop stop-color="currentcolor" stop-opacity="0" offset="0"/><stop stop-color="currentcolor" offset="1"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width=".518" paint-order="stroke markers fill"><path d="M83.101 105.78h2.78" stroke="url(#b)" transform="translate(-82.375 -105.52)"/><path d="M82.638 107.25h3.708" stroke="url(#c)" transform="translate(-82.375 -105.52)"/><path d="M83.101 108.72h2.78" stroke="url(#d)" transform="translate(-82.375 -105.52)"/></g></svg>
-
-
+      
     // navigation
     div(id="nav-menu" class="collapse navbar-collapse justify-content-end")
       ul(class="navbar-nav")
+        li.nav-item
+          a(class="nav-link header-link active" href="/") Home
+        li.nav-item
+          a(class="nav-link header-link" href="/about") About
+        li.nav-item
+          a(class="nav-link header-link" href="/services") Services
         //- li.nav-item
-        //-   a(class="nav-link header-link" href="/") Home
-        li.nav-item
-          a(class="nav-link header-link" href="#about") About
-        li.nav-item
-          a(class="nav-link header-link" href="#services") Services
-        li.nav-item
-          a(class="nav-link header-link" href="#portfolio") Portfolio
+          a(class="nav-link header-link" href="/portfolio") Portfolio
         //- li.nav-item
           a(class="nav-link header-link" href="#") Blog
         li.nav-item
-            a(class="nav-link header-link" href="#contact") Contact Me
-
-    // mobile navigation menu
-    div(id="mobile-nav-menu" class="dropdown-menu mobile-menu d-md-none") 
-      //- div(class="offcanvas-header")
-      div(class="offcanvas-header justify-content-end")
-        //- h5(id="menuLabel" class="offcanvas-title text-light")    Menu
-        button(class="btn" type="button" data-bs-dismiss="offcanvas" title="Close")
-          <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-            <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
-          </svg>
-
-      div( class="offcanvas-body")
-        ul(class="list-unstyled navbar-nav text-center")
-          //- li.nav-item
-              a(class="nav-link sidebar-link" href="/") Home
-          li.nav-item
-            a(class="nav-link sidebar-link" href="#about") About
-          li.nav-item
-            a(class="nav-link sidebar-link" href="#services") Services
-          li.nav-item
-            a(class="nav-link sidebar-link" href="#portfolio") Portfolio
-          //- li.nav-item
-            a(class="nav-link sidebar-link" href="#") Blog
-          li.nav-item
-            a(class="nav-link sidebar-link" href="#contact") Contact Me
+            a(class="nav-link header-link" href="/contact") Contact Me

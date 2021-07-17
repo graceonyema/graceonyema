@@ -1,8 +1,8 @@
 // Portfolio
 section(id="portfolio" class="section")
   .container-fluid.container-md
-    h2(class="title sub-title")
-      span Portfolio
+    h2(class="title text-center")
+      span.sub-title    Portfolio
     div(class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 py-5")
       each project in projects
         +offerCard(project)

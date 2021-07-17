@@ -7,12 +7,13 @@
   },
   "main": "app.js",
   "scripts": {
-    "build": "npm-run-all build:pug build:dist",
-    "build:pug": "pug -w -O data.json web/views/index.pug -o web/src -P",
+    "build": "npm-run-all pug build:dist",
+    "build:pug": "pug -w -O data.js web/views/pages/ -o web/src -P",
     "build:dist": "gulp",
     "build:image": "gulp imageOp",
     "dev": "npm-run-all --parallel serve:dev build:pug",
     "lint": "eslint .",
+    "pug": "pug -O data.js web/views/pages/ -o web/src -P",
     "serve:dev": "set DEBUG=app:* & nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
