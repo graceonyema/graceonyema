@@ -11,41 +11,48 @@ block header
   +nav("home")
 
 block content
-
-  // Ad Pane
-  div(id="promo" class="top-ad")
-
-  // Hero
-  section(id="about" class="jombotron jumbotron-fluid")
+  //  Hero
+  section(id="hero" class="hero")
     .container-fluid.container-lg
       //- .row.row-cols-1.row-cols-sm-2
       .row
         .col-12.col-md-6.d-flex
-          div(class="img-container mb-4 m-auto")
-            img(
-              class="img-fluid"
-              src=`/images/${picture}`
-              alt=`An image of ${title}`
-              width="650"
-              height="650"
-            )
+          div(class="img-container mb-5 m-auto")
+            picture 
+              //- source( srcset="logo-480.png, logo-480-2x.png 2x" media="(min-width: 410px)")
+              source( srcset=`/assets/images/${picture1.normal}, /assets/images/${picture1.normal2x} 2x` media="(min-width: 410px)")
+              img(
+                class="img-fluid rounded"
+                src=`/assets/images/${picture1.small}`
+                alt=title
+                width="600"
+                height="705"
+              )
         .col-12.col-md-6
-          div(class="container")
+          div(class="container-fluid container-sm")
             h1(class="title") #{header}
             //- p(id="profession" class="fade-in profession fs-5") #{work}
             p(id="profession" class="fade-in profession") #{work}
             
-            a(class="btn btn-cta" href="/about") Read More
+            a(class="btn btn-gold" href="/about") Read More
 
       //- include ./includes/snow-anim.pug
+  
+  //  Ad Pane
+  //- div(id="promo" class="top-ad")
+  include ../includes/ad
 
-
+  //  Services
   include ../includes/services
 
-
-  // Resources
+  //  Resources
   include ../includes/resources
 
+  //  Portfolio
   //- include ./includes/portfolio
-
+  
+  //  Testimonials
   include ../includes/testimonials
+
+  //  Call To Action
+  include ../includes/cta

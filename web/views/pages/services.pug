@@ -10,12 +10,25 @@ block header
   +nav("services")
 
 block content
+  // Hero
+  section(id="hero" class="hero")
+    .container-fluid.container-lg.text-center
+      h1.title.mb-5
+        span.sub-title    Work with me
+      
+      //- p.lead.
+  
+  //  Ad Pane
+  //- div(id="promo" class="top-ad")
+  include ../includes/ad
+
   section.section
     .container-fluid.container-lg
-      h1.title.text-center.mb-5
-        span.sub-title   Work with me 
-
       //- div(class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 py-5")
-      div(class="row row-cols-1 row-cols-lg-2 g-4 py-5")
+      div(class="row row-cols-1 row-cols-lg-2 g-4 pb-5")
         each service in services
           +serviceCard(service)
+
+  // Call To Action
+  include ../includes/cta
+  

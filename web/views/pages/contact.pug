@@ -9,24 +9,25 @@ block header
   +nav("contact")
 
 block content
+  // Hero
+  section(id="hero" class="hero")
+    .container-fluid.container-lg.text-center
+      h1.title.mb-5
+        span.sub-title    Contact
+      
+      p.lead.
+        Reach out to me today… I would love to hear from you
+ 
   section.section
     .container
-      .text-center
-        h1.title.mb-5
-          //- span Get in touch with me
-          span.sub-title    Contact
-        
-        p.lead.
-          Reach out to me today… I would love to hear from you
-      
-      .row.row-cols-1.row-cols-md-2.g-5.py-5
+      .row.row-cols-1.row-cols-md-2.gy-5.pb-5
         .col 
           div(class="row row-cols-1 g-3")
             div(class="col")
               div(class="contact-card")
                 div(class="m-auto p-4 theme")
                   <svg class="bi" width="2em" height="2em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0z"/>
                   </svg>
                 div(class="card-body")
                   h4    Call me
@@ -61,8 +62,9 @@ block content
 
         .col 
           form(id="contact-form" class="card contact-form" method="POST" action="#")
-            .card-header.cta.p-2.border-0.text-center
-              h4 Leave a message
+            .card-header.p-3.text-center.cta-gold
+              h4.title.m-0
+                span      Leave a message
             .card-body
               .row.g-3
                 div(class="input-group mb-3")
@@ -76,8 +78,11 @@ block content
 
                 div(class="form-floating")
                   textarea(class="form-control form-message" placeholder="Leave a message or question" id="message" required)
-                  label(for="message")   Message*
+                  label(for="message")   message*
                 
-              button(class="btn btn-cta" type="submit") Send
+              button(class="btn btn-gold" type="submit") Send
               //- p.small.
                 <abbr title="required">*</abbr> required
+
+  // Resources
+  include ../includes/resources

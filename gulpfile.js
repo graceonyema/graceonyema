@@ -1,6 +1,6 @@
 // const gulp = require('gulp');
 const { src, dest, series, parallel, watch } = require('gulp');
-// const pug = require('gulp-pug');
+const pug = require('gulp-pug');
 const del = require('del');
 const replace = require('gulp-replace');
 const uglify = require('gulp-uglify-es').default;
@@ -9,8 +9,13 @@ const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const autoprefixer = require('gulp-autoprefixer');
 const htmlclean = require('gulp-htmlclean');
+const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
+const responsive = require('gulp-responsive-images');
 const sourcemaps = require('gulp-sourcemaps');
+
+// Site data
+const siteData = require('./data.js');
 
 //  Bootstrap links
 const bootstrapCdn = {
@@ -20,12 +25,23 @@ const bootstrapCdn = {
 
 const bootstrapLocal = {
   css: '<link rel="stylesheet" href="/styles/bootstrap.min.css">',
-  js: '<script src="/scripts/bootstrap.bundle.min.js"></script>'
+  js: '<script src="/scripts/bootstrap.bundle.min.js" defer></script>'
 };
 
 const clean = () => {
   return del([ 'web/dist/**/*', '!web/dist' ]);
 }
+
+const views = () => {
+  return src('web/views/pages/*.pug')
+    .pipe(
+      pug({
+        pretty: true,
+        locals: siteData,
+      })
+    )
+    .pipe(dest('web/src'));
+};
 
 // Create minified HTML, CSS and JS for distribution
 const minifyFiles = () => {
@@ -46,7 +62,8 @@ const minifyFiles = () => {
     //    Minify HTML files
     .pipe(gulpIf('*.html', replace(bootstrapLocal.css, bootstrapCdn.css)))
     .pipe(gulpIf('*.html', replace(bootstrapLocal.js, bootstrapCdn.js)))
-    .pipe(gulpIf('*.html', htmlclean()))
+    // .pipe(gulpIf('*.html', htmlclean()))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(dest('web/dist'))
 }
 
@@ -66,34 +83,55 @@ const copy = () => {
 //     .pipe(dest('web/dist/icons'));
 // };
 
-// Optimize Images
-const optimizeImages = () => {
-  return src('web/src/images/**/*')
-    .pipe(imagemin())
-    /*.pipe(imagemin([
-      imagemin.gifsicle({ interlaced: true }),
-      imagemin.mozjpeg({ quality: 75, progressive: true }),
-      imagemin.optipng({ optimizationLevel: 5 }),
-      imagemin.svgo({
-        plugins: [
-          { removeViewBox: true },
-          { cleanupIDs: false }
-        ]
-      })
-    ]))*/
-    .pipe(dest('web/dist/images'))
-}
+const optImages = () => {
+  return src('web/src/assets/images/**/*')
+    .pipe(responsive({
+      '*': [
+        {
+          width: 400,
+          quality: 75,
+        },
+        {
+          width: 600,
+          quality: 75,
+          suffix: '-600'
+        },
+        {
+          width: 600 * 2,
+          quality: 75,
+          suffix: '-600-2x'
+        },
+      ]
+    }))
+    .pipe(dest('web/dist/assets/images'));
+};
+
+const optIcons = () => {
+  return src('web/src/assets/icons/**/*')
+    .pipe(responsive({
+      '*': [
+        {
+          quality: 75,
+        },
+      ]
+    }))
+    .pipe(dest('web/dist/assets/icons'));
+};
 
 // Watch for file changes
+
 const watchFiles = () => {
   watch('web/src/*.html', minifyFiles);
 }
 
 // build optimized files
-const build = series(clean, parallel(minifyFiles, copy, optimizeImages));
+const build = series(clean, views, parallel(minifyFiles, copy, optIcons, optImages));
+const images = parallel(optIcons, optImages);
 
 
 module.exports = {
   default: build,
+  views,
+  images,
   watch: watchFiles
 };

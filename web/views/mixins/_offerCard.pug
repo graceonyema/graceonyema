@@ -1,23 +1,24 @@
 mixin offerCard(offer)
   .col
     div(class="card")
-      div
+      div(class="card-header bg-transparent border-0")
         img(
-          src=`/images/${offer.poster}`
-          class="card-img-top p-2"
-          alt=`an image of ${offer.poster}`
-          width="200"
-          height="150"
+          src=`/assets/icons/${offer.poster}`
+          class="img-thumbnail"
+          alt= ""
+          width="60"
+          height="60"
           loading="lazy"
         )
       if offer.cta
         div(class="card-body")
-          h4(class="card-title title")
+          h3(class="card-title title")
             span.sub-title   #{offer.title}
-          p(class="card-text")= offer.description
-          button(id="view-btn" class="btn")= offer.cta
+          p(class="card-text grid-hor-bg")    #{offer.description}
+          //- button(id="view-btn" class="btn btn-main")= offer.cta
+          a(class="btn btn-main" href=offer.link)   #{offer.cta}
       else
         div(class="card-body")
-          h4(class="card-title title")
+          h3(class="card-title title")
             span.sub-title   #{offer.title}
-          p(class="card-text")= offer.description
+          p(class="card-text grid-hor-bg")    #{offer.description}

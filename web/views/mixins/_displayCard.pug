@@ -1,0 +1,25 @@
+mixin displayCard(item)
+  .col
+    div(class="card border-0 m-auto display-card")
+      .row.g-0
+        .col-3
+          img(
+            src=`/assets/icons/${item.poster}`
+            class="img-fluid"
+            alt= ""
+            width="94"
+            height="150"
+            loading="lazy"
+          )
+        
+        .col-9
+          div(class="card-body p-2 text-start")
+            h3(class="small lh-lg")    #{item.title}
+            //- p(class="small text-start")= item.title
+
+      if item.cta
+        div
+          a(class="btn rounded-0 btn-main m-0 w-100" href=item.link) #{item.cta}
+            <svg class="bi ms-3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg>

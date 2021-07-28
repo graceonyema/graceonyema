@@ -9,25 +9,35 @@ block header
   +nav("about")
 
 block content
+  // Hero
+  section(id="hero" class="hero")
+    .container-fluid.container-lg.text-center
+      h1.title.mb-5
+        span.sub-title    About me
+      
+          //- p.lead.
+            
   section.section
     .container
-      h1.title.text-center.mb-5
-        span.sub-title About me 
-
-      .row.py-5
+      .row.pb-5
         .col-12.d-flex
           div(class="img-container mb-4 m-auto")
-            img(
-              class="img-fluid"
-              src=`/images/${picture}`
-              alt=`An image of ${title}`
-              width="650"
-              height="650"
-            )
+            picture
+              source( srcset=`/assets/images/${picture2.normal}, /assets/images/${picture2.normal2x} 2x` media="(min-width: 410px)")
+              img(
+                class="img-fluid rounded"
+                src=`/assets/images/${picture2.small}`
+                alt=title
+                width="600"
+                height="668"
+              )
         .col-12
           div(class="container")
             if about.paragraphs
               each paragraph in about.paragraphs
-                p   #{paragraph.text}
+                p.grid-hor-bg   #{paragraph.text}
             else
               p   #{work}
+
+  // Call To Action
+  include ../includes/cta

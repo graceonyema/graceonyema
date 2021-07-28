@@ -31,11 +31,8 @@ html(lang="en")
     main(id="main-content" class="site-main" role="main")
       block content
 
-    // Call To Action
-    include ./includes/cta
-
     // Site Footer
-    footer(id="site-footer" class="site-footer" role="contentinfo")
+    footer(id="site-footer" class="site-footer p-sm-3" role="contentinfo")
       // Footer Decoration
       <svg class="footer-deco" preserveAspectRatio="none" viewBox="0 0 317.5 7.938"><path d="M0 7.94V.002C55.496 5.232 108.99 8.47 159.37 3.14 212.24 8.64 264.63 5.7 317.5.002V7.94z"/></svg>
 
@@ -43,7 +40,7 @@ html(lang="en")
       //- include ./includes/bubble-anim.pug
 
     // Scripts
-    script(src="/scripts/bootstrap.bundle.min.js")
+    script(src="/scripts/bootstrap.bundle.min.js" defer)
 
     //- // build:js /scripts/index.min.js defer
     //- script(src="/scripts/index.js")
