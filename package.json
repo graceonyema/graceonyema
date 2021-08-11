@@ -9,7 +9,7 @@
   "scripts": {
     "build": "gulp",
     "build-pages": "gulp views",
-    "build-images": "gulp images",
+    "build-images": "gulp image",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d web/dist",
     "lint": "eslint .",

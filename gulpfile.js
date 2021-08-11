@@ -8,7 +8,7 @@ const cleanCSS = require('gulp-clean-css');
 const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const autoprefixer = require('gulp-autoprefixer');
-const htmlclean = require('gulp-htmlclean');
+// const htmlclean = require('gulp-htmlclean');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const responsive = require('gulp-responsive-images');
@@ -67,29 +67,44 @@ const minifyFiles = () => {
     .pipe(dest('web/dist'))
 }
 
-// Copy manifest and favicon
+// Copy manifest, favicon and other root files
 const copy = () => {
   return src([
-    // 'web/src/favicon.ico',
+    'web/src/favicon.ico',
     'web/src/sw.js',
-    // 'web/src/manifest.json'
+    'web/src/manifest.json'
   ])
+  //   Minify root JS files
+  .pipe(gulpIf('*.js', uglify()))
   .pipe(dest('web/dist'));
 }
 
-// Copy icons
-// const icons = () => {
-//   return src('web/src/icons/**')
-//     .pipe(dest('web/dist/icons'));
-// };
+// Optimize Images
+const minifyImages = () => {
+  return src('web/src/assets/**/*')
+    // .pipe(imagemin())
+    .pipe(imagemin([
+      imagemin.gifsicle({ interlaced: true }),
+      imagemin.mozjpeg({ quality: 75, progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.svgo({
+        plugins: [
+          { removeXMLNS: true },
+        ]
+      })
+    ]))
+    .pipe(dest('web/dist/assets'))
+}
 
-const optImages = () => {
+// Create respoonsive images
+const respImages = () => {
   return src('web/src/assets/images/**/*')
     .pipe(responsive({
-      '*': [
+      '*_pic.{png,jpg}': [
         {
           width: 400,
           quality: 75,
+          suffix: '-400'
         },
         {
           width: 600,
@@ -103,35 +118,23 @@ const optImages = () => {
         },
       ]
     }))
-    .pipe(dest('web/dist/assets/images'));
-};
-
-const optIcons = () => {
-  return src('web/src/assets/icons/**/*')
-    .pipe(responsive({
-      '*': [
-        {
-          quality: 75,
-        },
-      ]
-    }))
-    .pipe(dest('web/dist/assets/icons'));
+    .pipe(dest('web/src/assets/images'));
 };
 
 // Watch for file changes
-
 const watchFiles = () => {
-  watch('web/src/*.html', minifyFiles);
+  // watch('web/src/*.html', minifyFiles);
+  watch('web/src/assets/images', respImages);
 }
 
 // build optimized files
-const build = series(clean, views, parallel(minifyFiles, copy, optIcons, optImages));
-const images = parallel(optIcons, optImages);
+const build = series(clean, views, respImages, parallel(minifyFiles, copy, minifyImages));
+// const images = parallel(optIcons, minifyImages);
 
 
 module.exports = {
   default: build,
   views,
-  images,
+  image: minifyImages,
   watch: watchFiles
 };

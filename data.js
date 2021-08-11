@@ -1,14 +1,15 @@
 const data =  {
   title: "Grace Onyema",
+  description: "I help individuals, business owners and entrepreneurs earn in multiple streams, monetize their skills, and leverage digital skills & published assets to build influence and attain financial freedom.",
   header: "Hi, I'm Grace",
-  work: "I help individuals, business owners and entrepreneurial people earn in multiple streams, monetize their skills, and leverage digital skills & published assets to build influence and attain financial freedom.",
+  work: "I help individuals, business owners and entrepreneurs earn in multiple streams, monetize their skills, and leverage digital skills & published assets to build influence and attain financial freedom.",
   picture1: {
-    small: "grace_onyema_1_pic.jpg",
+    small: "grace_onyema_1_pic-400.jpg",
     normal: "grace_onyema_1_pic-600.jpg",
     normal2x: "grace_onyema_1_pic-600-2x.jpg"
   },
   picture2: {
-    small: "grace_onyema_2_pic.jpg",
+    small: "grace_onyema_2_pic-400.jpg",
     normal: "grace_onyema_2_pic-600.jpg",
     normal2x: "grace_onyema_2_pic-600-2x.jpg"
   },
@@ -48,16 +49,16 @@ const data =  {
       }
     },
     {
-      title: "Consultation",
-      poster: "consultation_icon.png",
-      description: "Reach out to me today to monetize your ideas effectively through book projects, digital products, marketing systems and sales strategies.",
-      details: "One major problem a lot of people face is not knowing how to develop and convert their ideas into a product. Consult with Grace today on your book project, digital products creation, marketing systems and sales strategies, to monetize your ideas effectively and generate multiple streams of income."
-    },
-    {
       title: "Content Creation",
       poster: "content_creation_icon.png",
       description: "I help you create unique and compelling contents of various types for your brand or business such as written, visual, interactive and video contents.",
       details: "Grace is skilled in a full range of content types, ranging from written content (blog posts, eBooks, how-to guides, checklists etc.) and visual content (images, videos etc.), to interactive content (contest, quizzes, polls etc.) and video content (product demo videos, how-to tutorial videos, webinar, video course content etc.). Contact Grace to create unique and compelling content for your brand or business."
+    },
+    {
+      title: "Consultation",
+      poster: "consultation_icon.png",
+      description: "Reach out to me today to monetize your ideas effectively through books, digital products, marketing systems and sales strategies.",
+      details: "One major problem a lot of people face is not knowing how to develop and convert their ideas into a product. Consult with Grace today on your book, digital products creation, marketing systems and sales strategies, to monetize your ideas effectively and generate multiple streams of income."
     },
     {
       title: "Coaching/Training",
@@ -72,23 +73,35 @@ const data =  {
       author: "Abiodun Oshin",
       initials: "AO",
       desc: "Nigeria",
-      type: "Book Project: Fragments of Grace (eBook)",
+      type: "Book",
+      title: "Fragments of Grace (eBook)",
       avatar: "fragments_of_grace_thumbnail.jpg",
-      comment: "A very confident and hard-working young lady. She has your time irrespective of your demands, and she’s one person I can refer to always. She rewrote the entire book like she was the writer… Grace Onyema is your go to for everything about a book project. She knows the in and out of Amazon KDP. Good job ma’am."
+      comment: "A very confident and hard-working young lady. She has your time irrespective of your demands, and she’s one person I can refer to always. She rewrote the entire book like she was the writer… Grace Onyema is your go to for everything about a book. She knows the in and out of Amazon KDP. Good job ma’am."
     },
     {
       author: "Fatai Oluyadi",
       initials: "FO",
       desc: "USA",
-      type: "Book Project: Finding Self (eBook & Paperback)",
+      type: "Book",
+      title: "Finding Self (eBook & Paperback)",
       avatar: "finding_self_thumbnail.jpg",
       comment: "I truly appreciate working with Grace. Her guidance through the entire process was incredible. She brings to the process of publishing many years of experience and I will recommend her to other writer friends of mine…"
+    },
+    {
+      author: "Precious Osikha",
+      initials: "PO",
+      desc: "Nigeria",
+      type: "Book",
+      title: "The Wall & The Flower (eBook & Paperback)",
+      avatar: "the_wall_and_the_flower_thumbnail.jpg",
+      comment: "After several failed attempts to get publishing on Amazon right, I reached out to Grace Onyema. She didn’t only give an expert opinion, she published the books, set up my Amazon & payment accounts, and monitored the progress. She went further to ensure my books became bestsellers on Amazon, and even assisted with the process of getting my books printed and shipped to Nigeria."
     },
     {
       author: "Moses Chores",
       initials: "MC",
       desc: "USA",
-      type: "Book Project: Say Yes To A Beautiful Marriage (eBook & Paperback)",
+      type: "Book",
+      title: "Say Yes To A Beautiful Marriage (eBook& Paperback)",
       avatar: "say_yes_to_a_beautiful_marriage_thumbnail.jpg",
       comment: "I am happy with your job. My book is doing well on Amazon with sales and becoming a bestseller in some categories just few days after publishing, even though I haven’t started any advertising campaigns yet. I recommend your Amazon publishing services for an excellent job carried out."
     },
@@ -96,20 +109,18 @@ const data =  {
       author: "Precious Osikha",
       initials: "PO",
       desc: "Nigeria",
-      type: `Book Projects: The Wall & The Flower (eBook & Paperback), White Whispers (eBook & Paperback)
-      `,
-      avatar: "the_wall_and_the_flower_thumbnail.jpg",
-      comment: `I began my publishing journey on Amazon and after publishing the first eBook, I didn’t go further than that. My major challenge was getting the exact dimension and formatting requirements correctly. After several failed attempts to get it right, I reached out to Grace for her expert opinion. Grace Onyema didn’t only give me an expert opinion, she published the books, set up my Amazon & payment accounts accurately, and even monitored the progress and many more.
-      I thought I had seen the end when she appeared again and further rendered her assistance to ensure my books hit the bestselling spots on Amazon, and even assisted with the process of getting my books printed and shipped to Nigeria.
-      I must commend her speed, accuracy, patience in answering all my many questions, care, and great concern. At some point, I wondered if Grace Onyema was a staff of Amazon. She is more than an expert, thank you Grace Onyema. I recommend her Amazon publishing services, as she makes the process of Amazon publishing very easy and stress-free.
-      `
+      type: `Books`,
+      title: "White Whispers (eBook & Paperback)",
+      avatar: "white_whispers_thumbnail.jpg",
+      comment: `I must commend her speed, accuracy, patience in answering all my many questions, care, and great concern. At some point, I wondered if Grace Onyema was a staff of Amazon. She is more than an expert, thank you Grace Onyema. I recommend her Amazon publishing services, as she makes the process of Amazon publishing very easy and stress-free.`
     },
     {
       author: "Ifunanya Ede",
       initials: "IE",
       desc: "Nigeria",
-      type: "",
-      avatar: "",
+      type: "Book",
+      title: "Drop That Whip! (eBook & Paperback)",
+      avatar: "drop_that_whip_thumbnail.jpg",
       comment: "I really want to thank you for a job well done. I love that you worked in a very organised manner, and I also felt carried along through the whole process. Everything on that platform is in the way that I would have wanted it. I also want to commend the speed at which you worked. In less than a week, my book was Live on Amazon and became a bestseller as well. So, thank you Grace for everything."
     }
   ],
@@ -118,32 +129,34 @@ const data =  {
   },
   resources: {
     title: "Get access to products, programs and other resources",
-    link: "#",
+    link: "https://selar.co/m/graceonyema",
     items: [
       {
-        title: "How to make monkey soup",
-        link: "#",
-        poster: "white_whispers_thumbnail.jpg",
-        cta: "Get it"
+        title: "10 Ways To Cash Out From Your Skill/Talent/Knowledge By Doing Just 1 Thing",
+        link: "https://selar.co/10ways",
+        poster: "10_ways_to_cash_out_from_your_skill_talent_knowledge_by_doing_just_1_thing.jpg",
+        cta: "Download Now"
       },
       {
-        title: "1 Week Coaching Program: Winning With Bakery Business",
-        link: "#",
-        poster: "white_whispers_thumbnail.jpg",
-        cta: "Watch now"
+        title: "1 Week Coaching Program: Digital Products Creation Mastery",
+        link: "https://selar.co/e19y",
+        poster: "1_week_coaching_program_digital_products_creation_mastery.png",
+        cta: "Book Now"
       },
       {
-        title: "Item title",
-        link: "#",
-        poster: "white_whispers_thumbnail.jpg",
-        cta: "Download now"
+        title: "One Page Business Plan Mastery",
+        link: "https://selar.co/zqh5",
+        poster: "one_page_business_plan_mastery.png",
+        cta: "Get Access"
       },      
     ]
   },
   ad: {
-    title: "Get this free resource straight in your inbox",
+    header: "Get this free resource straight in your inbox",
+    title: "Digital Products Creation Checklist",
     cta: "Get Gift",
-    link: "#"
+    poster: "digital_products_creation_checklist.jpg",
+    link: "https://selar.co/dpcc"
   }
 }
 
