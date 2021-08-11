@@ -1,26 +1,27 @@
-const headerNav = document.getElementById("site-header");
+// const headerNav = document.getElementById("site-header");
+const pageTopBtn = document.getElementById("go-to-top");
 
-function toggleHeaderBg() {
+function toggleTopBtn() {
   if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
-    headerNav.classList.remove("header-transparent");
+    pageTopBtn.classList.remove("d-none");
     // headerNav.classList.add("header-transparent");
   } else {
-    headerNav.classList.add("header-transparent");
+    pageTopBtn.classList.add("d-none");
     // headerNav.classList.remove("header-transparent");
   }
 }
 
 window.onscroll = function() {
-  toggleHeaderBg()
+  toggleTopBtn()
 };
 
 /** Register Service Worker **/
-// if (navigator.serviceWorker) {
-//   navigator.serviceWorker.register('./sw.js')
-//   .then(() => {
-//       console.log('Service Worker registered')
-//   })
-//   .catch((error) => {
-//       console.log('Registration Failed', error);
-//   });
-// }
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/sw.js')
+  // .then(() => {
+  //     console.log('Service Worker registered')
+  // })
+  .catch((error) => {
+      console.log('Registration Failed', error);
+  });
+}
