@@ -61,28 +61,34 @@ block content
                   a(class="link stretched-link" href=`https://wa.me/${whatsapp}`)= `+${whatsapp}`
 
         .col 
-          form(id="contact-form" class="card contact-form" method="POST" action="#")
-            .card-header.p-3.text-center.cta-gold
+          form(
+            id="contact-form" 
+            class="card contact-form gform" 
+            method="POST" 
+            action="https://script.google.com/macros/s/AKfycbyaQF85AIP0PIQWxUE05gEK2jM3q7q1Dgks9VvkUw/exec"
+          )
+            .card-header.text-center.cta-black.p-3.mb-3
               h4.title.m-0
                 span      Leave a message
             .card-body
-              .row.g-3
+              .row.g-3.mb-3
                 div(class="input-group mb-3")
                   label(class="input-group-text" for="name") 
                     <span>Name </span><span>*</span>
-                  input(type="text" class="form-control" id="name" required)
+                  input(type="text" class="form-control" id="name" name="name" required)
                 
                 div(class="input-group mb-3")
                   label(class="input-group-text" for="email") Email*
-                  input(type="email" class="form-control" id="email" required)
+                  input(type="email" class="form-control" id="email" name="email" required)
 
                 div(class="form-floating")
-                  textarea(class="form-control form-message" placeholder="Leave a message or question" id="message" required)
-                  label(for="message")   message*
-                
+                  textarea(class="form-control form-message" name="message" placeholder="message or question" id="message" required)
+                  label(classs="small text-muted" for="message")   message*
+
+             
               button(class="btn btn-gold" type="submit") Send
-              //- p.small.
-                <abbr title="required">*</abbr> required
+     
+              div(id="status" class="thankyou_message fade-in p-2 d-none" role="alert" aria-live="assertive")  Thanks for reaching out. You will get a response soon!
 
   // Resources
   include ../includes/resources

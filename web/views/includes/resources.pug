@@ -1,6 +1,6 @@
 include ../mixins/_displayCard
 
-section(id="resources" class="section cta-white py-4")
+section(id="resources" class="section cta-divider py-4")
   //- <svg class="cta-deco" preserveAspectRatio="none" viewBox="0 0 317.5 7.938"><path d="M0 7.94V.002C55.496 5.232 108.99 8.47 159.37 3.14 212.24 8.64 264.63 5.7 317.5.002V7.94z"/></svg>
   .container-fluid.container-lg.text-center
     h2.title.pb-3
@@ -12,7 +12,12 @@ section(id="resources" class="section cta-white py-4")
       each item in resources.items
         +displayCard(item)
 
-    a(class="btn btn-gold" href=resources.link)   See All
-      <svg class="bi ms-3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-      </svg>
+    a(class="btn btn-gold" href=resources.link target="_blank")   See All
+      span(class="ms-2" aria-hidden="true")
+        //- | &#128622;
+        //- | &#11208;
+        //- | &#11162;
+        | &#11166;
+      //- <svg class="bi ms-3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      //-   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      //- </svg>

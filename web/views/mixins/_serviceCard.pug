@@ -1,6 +1,6 @@
 mixin serviceCard(service)
   .col
-    div(class="card d-md-flex service-card")
+    div(class="card d-md-flex border-0 service-card")
       div(class="card-header bg-transparent border-0")
         img(
           src=`/assets/icons/${service.poster}`
@@ -15,9 +15,11 @@ mixin serviceCard(service)
           h2(class="card-title title")
             span.sub-title  #{service.title}
           each paragraph in service.details.paragraphs
-            p(class="card-text grid-hor-bg")= paragraph.text
+            //- p(class="card-text grid-hor-bg")= paragraph.text
+            p(class="card-text")= paragraph.text
       else
         div(class="card-body")
           h2(class="card-title title")
             span.sub-title  #{service.title}
-          p(class="card-text grid-hor-bg")= service.details
+          //- p(class="card-text grid-hor-bg")= service.details
+          p(class="card-text")= service.details

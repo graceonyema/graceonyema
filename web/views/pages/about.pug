@@ -20,8 +20,8 @@ block content
   section.section
     .container
       .row.pb-5
-        .col-12.d-flex
-          div(class="img-container mb-4 m-auto")
+        .col-12.d-flex.mb-5
+          div(class="img-container m-auto")
             picture
               source( srcset=`/assets/images/${picture2.normal}, /assets/images/${picture2.normal2x} 2x` media="(min-width: 410px)")
               img(
@@ -35,7 +35,8 @@ block content
           div(class="container")
             if about.paragraphs
               each paragraph in about.paragraphs
-                p.grid-hor-bg   #{paragraph.text}
+                //- p.grid-hor-bg   #{paragraph.text}
+                p   #{paragraph.text}
             else
               p   #{work}
 

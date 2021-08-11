@@ -3,8 +3,25 @@ html(lang="en")
   head
     meta( charset="utf-8" )
     meta( name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" )
+    
     // Dynamic title block
     block title
+
+    link( rel="manifest" href="/manifest.json")
+
+    meta( name="mobile-web-app-capable" content="yes")
+    meta( name="apple-mobile-web-app-capable" content="yes")
+    meta( name="application-name" content="Gracen")
+    meta( name="apple-mobile-web-app-title" content="Gracen")
+    meta( name="theme-color" content="#b17a2a")
+    meta( name="msapplication-navbutton-color" content="#b17a2a")
+    meta( name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+    meta( name="msapplication-starturl" content="/")
+    
+    link( rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
+    link( rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
+    link( rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+    link( rel="shortcut icon" href="/favicon.ico")
 
     link( rel="preconnect" href="https://fonts.gstatic.com")
     //- link( rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"  )
@@ -17,8 +34,7 @@ html(lang="en")
     link( rel='stylesheet', href='/styles/index.css'  )
     // endbuild
 
-  //- body(class="dot-bg")
-  body(class="dot-bg")
+  body
 
     // Skip to main
     a(class="visually-hidden-focusable" href="#main-content") Skip to main content
@@ -42,6 +58,6 @@ html(lang="en")
     // Scripts
     script(src="/scripts/bootstrap.bundle.min.js" defer)
 
-    //- // build:js /scripts/index.min.js defer
-    //- script(src="/scripts/index.js")
-    //- // endbuild
+    // build:js /scripts/index.min.js defer
+    script(src="/scripts/index.js")
+    // endbuild
