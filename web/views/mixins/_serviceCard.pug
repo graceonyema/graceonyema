@@ -1,23 +1,25 @@
 mixin serviceCard(service)
   .col
-    div(class="card d-md-flex service-card")
-      div
+    div(class="service-card shadow h-100")
+      div(class="p-3")
         img(
-          src=`/images/${service.poster}`
-          class="card-img-top p-2"
-          alt=`an image of ${service.poster}`
-          width="200"
-          height="150"
+          src=`/assets/icons/${service.poster}`
+          class="img-thumbnail p-2"
+          alt=""
+          width="60"
+          height="60"
           loading="lazy"
         )
-      if service.paragraphs
-        div(class="card-body")
-          h4(class="card-title title")
-            span.sub-title  #{service.title}
-          each paragraph in service.paragraphs
+
+      div(class="card-body")
+        h2(class="card-title title")
+          span.sub-title  #{service.title}
+
+        if service.details.paragraphs
+          each paragraph in service.details.paragraphs
+            //- p(class="card-text grid-hor-bg")= paragraph.text
             p(class="card-text")= paragraph.text
-      else
-        div(class="card-body")
-          h4(class="card-title title")
-            span.sub-title  #{service.title}
-          p(class="card-text")= service.description
+
+        else
+          //- p(class="card-text grid-hor-bg")= service.details
+          p(class="card-text")= service.details

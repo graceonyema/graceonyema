@@ -1,11 +1,22 @@
-//- section(id="cta" class="p-5")
-section(id="resources" class="section cta-resources pb-4 my-4")
+include ../mixins/_resourceCard
+
+section(id="resources" class="section cta-divider")
   //- <svg class="cta-deco" preserveAspectRatio="none" viewBox="0 0 317.5 7.938"><path d="M0 7.94V.002C55.496 5.232 108.99 8.47 159.37 3.14 212.24 8.64 264.63 5.7 317.5.002V7.94z"/></svg>
-  .container-fluid.container-md.text-center
-    h2.title
-      span   Resources
+  
+  h2.title.text-center.accent    Resources
+      //- span.sub-title   Resources
 
-    p.my-4   #{resources.title}
+  .container-fluid.container-lg.text-center
+    p.lead.mb-5   #{resources.title}
 
-    a(class="btn btn-main" href=resources.link)   See All
-    a(class="btn btn-main" href=resources.gift)   Get Gift
+    //- div(class="row row-cols-1 row-cols-md-2 row-cols-lg-3 text-start g-4 pt-3 pb-5")
+    div(class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 text-start g-4 py-5")
+      each item in resources.items
+        +resourceCard(item)
+
+    a(class="btn btn-gold ext-link" href=resources.link target="_blank" rel="noopener")   View All
+      //- span(class="ms-2" aria-hidden="true")
+        <svg class="bi ms-3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+          <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+          <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+        </svg>

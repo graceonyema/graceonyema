@@ -1,51 +1,67 @@
 extends ../layout
-include ../mixins/_offerCard
-include ../mixins/_testimonialCard
 include ../mixins/_info
 include ../mixins/_nav
 
 block title
-  +info("Home")
+  +info("")
 
 block header
   +nav("home")
 
 block content
-
-  // Ad Pane
-  div(id="promo" class="top-ad")
-
-  // Hero
-  section(id="about" class="jombotron jumbotron-fluid")
+  //  Hero
+  section(id="hero" class="hero section")
     .container-fluid.container-lg
       //- .row.row-cols-1.row-cols-sm-2
       .row
-        .col-12.col-md-6.d-flex
-          div(class="img-container mb-4 m-auto")
-            img(
-              class="img-fluid"
-              src=`/images/${picture}`
-              alt=`An image of ${title}`
-              width="650"
-              height="650"
-            )
-        .col-12.col-md-6
-          div(class="container")
-            h1(class="title") #{header}
-            //- p(id="profession" class="fade-in profession fs-5") #{work}
-            p(id="profession" class="fade-in profession") #{work}
-            
-            a(class="btn btn-cta" href="/about") Read More
+        .col-12.col-md-5.d-flex
+          div(class="img-container mb-5 m-auto")
+            picture 
+              //- source( srcset="logo-480.png, logo-480-2x.png 2x" media="(min-width: 435px)")
+              //- source(media="(min-width: 435px)" srcset=`/assets/images/${picture1.small} 1x, /assets/images/${picture1.small2x} 2x`)
+              source(media="(min-width: 435px)" srcset=`/assets/images/${picture1.medium} 1x, /assets/images/${picture1.medium2x} 2x`)
+              img(
+                class="img-thumbnail pic-frame"
+                src=`/assets/images/${picture1.small}`
+                srcset=`/assets/images/${picture1.small} 1x, /assets/images/${picture1.small2x} 2x`
+                alt=title
+                width="500"
+                height="587"
+              )
+        
+        .col-12.col-md-7
+          div(class="container-fluid container-sm")
+            .text-center
+              h1.heading.m-1  #{header}
+              
+              p(class="small")
+                span.accent Multiple Amazon Bestselling Author
+                span.mx-3 | 
+                span.accent Digital Entrepreneur
+
+
+              p(class="fade-in my-5 lead") #{work}
+              
+              //- a(class="btn btn-main" href="/about") Read More
+              a(class="btn btn-gold" href="/about") Checkout My Full Bio
 
       //- include ./includes/snow-anim.pug
+  
+  //  Ad Pane
+  //- div(id="promo" class="top-ad")
+  include ../includes/ad
 
-
+  //  Services
   include ../includes/services
 
-
-  // Resources
+  //  Resources
   include ../includes/resources
 
+  //- //  Portfolio
   //- include ./includes/portfolio
-
+  
+  //  Testimonials
   include ../includes/testimonials
+
+  //  Call To Action
+  include ../includes/cta

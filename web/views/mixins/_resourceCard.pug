@@ -1,0 +1,31 @@
+mixin resourceCard(item)
+  .col.mb-5
+    div(class="card grid-item cta-black")
+      img(
+        src=`/assets/icons/${item.poster}`
+        class="img-fluid"
+        alt= `${item.title}`
+        width="300"
+        height="300"
+        loading="lazy"
+      )
+      
+      div(class="card-body")
+        h3(class="heading card-text fs-5")      #{item.title}
+        if item.rating
+          p.visually-hidden      Rating:  #{item.rating}
+          
+          div.accent.mb-3
+            span(class="star" class={checked: item.rating  >= "1"})
+            span(class="star" class={checked: item.rating  >= "2"})
+            span(class="star" class={checked: item.rating  >= "3"})
+            span(class="star" class={checked: item.rating  >= "4"})
+            span(class="star" class={checked: item.rating  >= "5"})
+        
+        p.accent.lead
+          span.visually-hidden.me-2    Price:
+          span.price    #{item.price}
+
+      if item.cta
+        div
+          a(class="btn btn-main w-100 ext-link" href=item.link target="_blank" rel="noopener") #{item.cta}

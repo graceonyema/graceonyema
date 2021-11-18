@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'web/views/pages'));
 app.set('view engine', 'pug');
 
 // middlewares for development and production env.
-app.use(compression());
+// app.use(compression());
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());

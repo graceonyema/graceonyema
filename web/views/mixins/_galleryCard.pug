@@ -1,0 +1,30 @@
+mixin galleryCard(image)
+  .col.mb-5
+    //- div(class="card h-100 border-0")
+    div(class="card grid-item cta-black")
+      
+      //- Image Orientation Keys:  1 => square, 2 => landscape, 3 => portrait
+          Set height based on Image Orientation
+      img(
+        src=`/assets/gallery/${image.poster}`
+        class="img-fluid"
+        alt=`${image.title}`
+        width="400"
+        height=`${ 
+          image.orientation == "2" ? '300' :
+                `${ image.orientation == '3' ? '533' : '400'}`
+          }`
+        loading="lazy"
+      )
+      div(class="card-body") 
+          
+      div(class="cta-black p-2")
+        //- h3(class="heading fs-5")     #{image.title}
+        h3(class="heading card-text fs-5")
+          .small     #{image.title}
+
+        //- Image is caregorized
+        if image.category 
+          p(class="card-text small")
+            span.accent.me-2            Category: 
+            span                        #{image.category} 

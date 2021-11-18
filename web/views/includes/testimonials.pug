@@ -1,31 +1,46 @@
-// Testimonials
+include ../mixins/_testimonialCard
+
+
 section(id="testimonials" class="section")
-  .container-fluid.container-md
-    h2(class="title text-center") 
+  h2(class="title text-center") 
       span.sub-title  What others are saying
+
+  .container-fluid.container-md.p-0.px-sm-5
+
+    //- p.lead.text-center.text-capitalize.theme-color.
+    p.lead.text-center.
+      Meet some of my clients 
+
+
     //- div(id="testimonial-slide" class="carousel slide carousel-fade" data-bs-ride="carousel")
     div(id="testimonial-slide" class="carousel slide carousel-fade py-5" data-bs-ride="carousel")
     
       div(class="carousel-inner mb-3")
         +testimonialCard(testimonials)
       
-      div(class="carousel-indicators position-relative rounded-3")
-        button(type="button" data-bs-target="#testimonial-slide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1")
-        button(type="button" data-bs-target="#testimonial-slide" data-bs-slide-to="1" aria-label="Slide 2")
-        button(type="button" data-bs-target="#testimonial-slide" data-bs-slide-to="2" aria-label="Slide 3")
-        button(type="button" data-bs-target="#testimonial-slide" data-bs-slide-to="3" aria-label="Slide 4")
-        button(type="button" data-bs-target="#testimonial-slide" data-bs-slide-to="4" aria-label="Slide 5")
+      //- div(class="carousel-indicators cta-black position-relative rounded-3")
+        each testimonial, index in testimonials
+          if index==0
+            button(type="button" data-bs-target="#testimonial-slide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1")
+          
+          else  
+            button(
+              type="button" 
+              data-bs-target="#testimonial-slide" 
+              data-bs-slide-to=`${index}` 
+              aria-label=`${index + 1}`
+            )
 
-      //- button(class="carousel-control-prev" type="button" data-bs-target="#testimonial-slide" data-bs-slide="prev")
-        span(class="text-dark" aria-hidden="true")
-          <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      button(class="carousel-control-prev w-auto" type="button" data-bs-target="#testimonial-slide" data-bs-slide="prev")
+        span(class="theme fs-1" aria-hidden="true")
+          <svg class="bi ms-3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
           </svg>
         span(class="visually-hidden") Previous
 
-      //- button(class="carousel-control-next" type="button" data-bs-target="#testimonial-slide" data-bs-slide="next")
-        span(class="text-dark" aria-hidden="true")
-          <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+      button(class="carousel-control-next w-auto" type="button" data-bs-target="#testimonial-slide" data-bs-slide="next")
+        span(class="theme fs-1" aria-hidden="true")
+          <svg class="bi ms-3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
           </svg>
         span(class="visually-hidden") Next
