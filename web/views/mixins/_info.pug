@@ -1,25 +1,25 @@
 mixin info(page)
 
   // Primary Meta Tags
-  title #{page!=="Home" ? `${page} - ` : ""} #{title}
-  meta( name="title" content=title)
+  title #{page!=="" ? `${page} - ` : ""} #{title}
+  //- meta( name="title" content=title)
   meta( name="author" content=title)
   meta( name="description" content=description)
-  meta( name="robots" content="index, follow")
-  link( rel="canonical" href=`https://www.aira.net/blog/${page}`)
+  //- meta( name="robots" content="index, follow")
+  link( rel="canonical" href=`https://graceonyema.github.io/${page}`)
 
   // Open Graph / Facebook
   meta( property="og:type" content="website")
-  meta( property="og:url" content="https://graceonyema.com/")
+  meta( property="og:url" content="https://graceonyema.github.io/")
   meta( property="og:title" content=title)
   meta( property="og:description" content=description)
-  meta( property="og:image" content="https://graceonyema.com/assets/icons/portfolio.jpg")
+  meta( property="og:image" content="https://graceonyema.github.io/assets/icons/portfolio.jpg")
   //- meta( property="og:image:width" content="1200")
   //- meta( property="og:image:height" content="630")
 
   // Twitter
   meta( property="twitter:card" content="summary_large_image")
-  meta( property="twitter:url" content="https://graceonyema.com/")
+  meta( property="twitter:url" content="https://graceonyema.github.io/")
   meta( property="twitter:title" content=title)
   meta( property="twitter:description" content=description)
-  meta( property="twitter:image" content="https://graceonyema.com/assets/icons/twitter_portfolio.jpg")
+  meta( property="twitter:image" content="https://graceonyema.github.io/assets/icons/twitter_portfolio.jpg")

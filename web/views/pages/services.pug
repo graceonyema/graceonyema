@@ -11,23 +11,53 @@ block header
 
 block content
   // Hero
-  section(id="hero" class="hero")
+  section(id="hero" class="hero section")
     .container-fluid.container-lg.text-center
-      h1.title.mb-5
-        span.sub-title    Work with me
+      h1.title       Work With Me
+        //- span.sub-title    Work With Me
       
       //- p.lead.
   
-  //  Ad Pane
+  //- //  Ad Pane
   //- div(id="promo" class="top-ad")
-  include ../includes/ad
+  //- include ../includes/ad
 
   section.section
     .container-fluid.container-lg
+      p.text-center.fs-1.
+        Services
+
       //- div(class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 py-5")
-      div(class="row row-cols-1 row-cols-lg-2 g-4 pb-5")
-        each service in services
-          +serviceCard(service)
+      div(class="row row-cols-1 gy-5 py-5") 
+        
+        each service, index in services
+          //- if index % 2 == 0
+          div(class="col item-card")
+            div(class="row row-cols-1 align-items-center g-4" class={"flex-sm-row-reverse": index % 2 !== 0} )
+              .col.col-lg-5
+                .position-relative.box-container
+                  img(
+                    class="img-fluid"
+                    src=`/assets/icons/${service.image}`
+                    alt=service.title
+                    width="500"
+                    height="300"
+                    loading="lazy"
+                  )
+                  
+                  h2(class="Heading img-tag m-0")  #{service.title}
+
+              .col.col-lg-7
+                div(class="card-body text-justify")  
+                  if service.details.paragraphs
+                    each paragraph in service.details.paragraphs
+                      //- p(class="card-text grid-hor-bg")= paragraph.text
+                      p(class="card-text")= paragraph.text
+
+                  else
+                    //- p(class="card-text grid-hor-bg")= service.details
+                    p(class="card-text")= service.details
+
 
   // Call To Action
   include ../includes/cta

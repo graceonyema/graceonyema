@@ -1,11 +1,19 @@
-// Services
+include ../mixins/_offerCard
+
+
 section(id="services" class="section pb-5")
+  h2(class="title text-center")
+      span.sub-title Work With Me
+
   .container-fluid.container-md
-    h2(class="title text-center")
-      span.sub-title Services
+    p.lead.text-center.text-capitalize.
+      I provide real time solutions 
+
+
     //- div(class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 py-5")
     div(class="row row-cols-1 row-cols-md-2  g-4 py-5")
       each service in services
         +offerCard(service)
+        
     a(class="btn btn-main" href="/services") Learn More
     //- button(class="btn btn-main")    Learn More

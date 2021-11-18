@@ -18,13 +18,13 @@ mixin testimonialCard(testimonials)
               else 
                 .avatar.rounded-circle  #{testimonial.initials}
               figcaption  
-                p(class="m-0 card-title title author")  #{testimonial.author}
-                p(class="m-0 text-muted small")  #{testimonial.desc}
-            div(class="card-body px-4 small")
+                p(class="m-0 card-title author")  #{testimonial.author}
+                p(class="m-0 muted small")  #{testimonial.desc}
+            div(class="card-body p-4 small")
               blockquote= testimonial.comment
             div(class="card-footer cta-black border-0")
               p(class="m-0 small")
-                span.theme-color #{testimonial.type}: 
+                span.accent #{testimonial.type}: 
                 span #{testimonial.title}
             
       else
@@ -43,12 +43,12 @@ mixin testimonialCard(testimonials)
               else 
                 .avatar.rounded-circle  #{testimonial.initials}
               figcaption  
-                p(class="m-0 card-title title author")  #{testimonial.author}
-                p(class="m-0 text-muted small")  #{testimonial.desc}
-            div(class="card-body px-4 small")
+                p(class="m-0 card-title author")  #{testimonial.author}
+                p(class="m-0 muted small")  #{testimonial.desc}
+            div(class="card-body p-4 small")
               blockquote= testimonial.comment
             div(class="card-footer cta-black border-0")
               p(class="m-0 small")
-                span.theme-color #{testimonial.type}: 
+                span.accent #{testimonial.type}: 
                 span #{testimonial.title}
               

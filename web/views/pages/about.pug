@@ -1,6 +1,7 @@
 extends ../layout
 include ../mixins/_info
 include ../mixins/_nav
+include ../mixins/_galleryCard
 
 block title
   +info("About")
@@ -10,35 +11,51 @@ block header
 
 block content
   // Hero
-  section(id="hero" class="hero")
+  section(id="hero" class="hero section")
     .container-fluid.container-lg.text-center
-      h1.title.mb-5
-        span.sub-title    About me
+      h1.title        Meet Grace
+        //- span.sub-title    Meet Grace
       
           //- p.lead.
-            
-  section.section
-    .container
-      .row.pb-5
-        .col-12.d-flex.mb-5
-          div(class="img-container m-auto")
+
+  // About Grace          
+  section(id="about" class="section")
+    .container-fluid.container-lg
+      div
+        .col-12.col-sm-5.float-end
+          div(class="text-center py-4 mx-sm-3")
             picture
-              source( srcset=`/assets/images/${picture2.normal}, /assets/images/${picture2.normal2x} 2x` media="(min-width: 410px)")
+              //- source(media="(min-width: 410px)" srcset=`/assets/images/${picture2.medium}, /assets/images/${picture2.medium2x} 2x`)
+              source(media="(min-width: 424px)" srcset=`/assets/images/${picture2.medium} 1x, /assets/images/${picture2.medium2x} 2x`)
               img(
-                class="img-fluid rounded"
+                class="img-thumbnail pic-frame"
                 src=`/assets/images/${picture2.small}`
+                srcset=`/assets/images/${picture2.small} 1x, /assets/images/${picture2.small2x} 2x`
                 alt=title
-                width="600"
-                height="668"
+                width="500"
+                height="557"
               )
-        .col-12
-          div(class="container")
+        div
+          div(class="p-3 text-justify")
             if about.paragraphs
               each paragraph in about.paragraphs
                 //- p.grid-hor-bg   #{paragraph.text}
                 p   #{paragraph.text}
             else
               p   #{work}
+
+  // Gallery
+  section(id="services" class="section")
+    h2(class="title text-center")
+        span.sub-title      Gallery
+
+    .container-fluid.container-md
+      //- div(class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 py-5")
+      //- div(class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5")
+      div(class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-md-5 gy-5 py-5 ")  
+        each item in gallery
+          +galleryCard(item)
+
 
   // Call To Action
   include ../includes/cta

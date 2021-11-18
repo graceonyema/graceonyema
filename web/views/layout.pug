@@ -11,16 +11,16 @@ html(lang="en")
 
     meta( name="mobile-web-app-capable" content="yes")
     meta( name="apple-mobile-web-app-capable" content="yes")
-    meta( name="application-name" content="Gracen")
-    meta( name="apple-mobile-web-app-title" content="Gracen")
-    meta( name="theme-color" content="#b17a2a")
-    meta( name="msapplication-navbutton-color" content="#b17a2a")
+    meta( name="application-name" content="Grace Onyema")
+    meta( name="apple-mobile-web-app-title" content="Grace Onyema")
+    meta( name="theme-color" content="#972d33")
+    meta( name="msapplication-navbutton-color" content="#972d33")
     meta( name="apple-mobile-web-app-status-bar-style" content="black-translucent")
     meta( name="msapplication-starturl" content="/")
     
-    link( rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
-    link( rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
-    link( rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+    link( rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png")
+    link( rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png")
+    link( rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png")
     link( rel="shortcut icon" href="/favicon.ico")
 
     link( rel="preconnect" href="https://fonts.gstatic.com")
@@ -28,9 +28,13 @@ html(lang="en")
     //- link( rel="stylesheet" href="https://fonts.googleapis.com/css2?family=K2D&family=Roboto&display=swap" )
     link( rel="stylesheet" href="https://fonts.googleapis.com/css2?family=K2D&family=Rubik&display=swap" )
     //- link( rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono|Muli" )
-    link( rel="stylesheet", href="/styles/bootstrap.min.css"  )
+    //- link( rel="stylesheet", href="/styles/bootstrap.min.css"  )
     
+    // build:css /styles/bootstrap.min.css
+    link( rel='stylesheet', href='/styles/bootstrap.css')
+    // endbuild
     // build:css /styles/index.min.css
+    //- link( rel='stylesheet', href='/styles/bootstrap.css')
     link( rel='stylesheet', href='/styles/index.css'  )
     // endbuild
 
@@ -48,12 +52,13 @@ html(lang="en")
       block content
 
     // Site Footer
-    footer(id="site-footer" class="site-footer p-sm-3" role="contentinfo")
+    footer(id="site-footer" class="site-footer p-lg-3" role="contentinfo")
       // Footer Decoration
       <svg class="footer-deco" preserveAspectRatio="none" viewBox="0 0 317.5 7.938"><path d="M0 7.94V.002C55.496 5.232 108.99 8.47 159.37 3.14 212.24 8.64 264.63 5.7 317.5.002V7.94z"/></svg>
 
       include ./includes/footer-nav
-      //- include ./includes/bubble-anim.pug
+
+      
 
     // Scripts
     script(src="/scripts/bootstrap.bundle.min.js" defer)

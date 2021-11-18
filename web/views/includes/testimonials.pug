@@ -1,7 +1,17 @@
+include ../mixins/_testimonialCard
+
+
 section(id="testimonials" class="section")
-  .container-fluid.container-md.p-0.p-sm-5
-    h2(class="title text-center") 
+  h2(class="title text-center") 
       span.sub-title  What others are saying
+
+  .container-fluid.container-md.p-0.px-sm-5
+
+    //- p.lead.text-center.text-capitalize.theme-color.
+    p.lead.text-center.
+      Meet some of my clients 
+
+
     //- div(id="testimonial-slide" class="carousel slide carousel-fade" data-bs-ride="carousel")
     div(id="testimonial-slide" class="carousel slide carousel-fade py-5" data-bs-ride="carousel")
     
@@ -23,16 +33,14 @@ section(id="testimonials" class="section")
 
       button(class="carousel-control-prev w-auto" type="button" data-bs-target="#testimonial-slide" data-bs-slide="prev")
         span(class="theme fs-1" aria-hidden="true")
-          //- | &#11207;
-          | &#11164;
-          //- | &#129064;
-          //- | &#11160;
+          <svg class="bi ms-3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+          </svg>
         span(class="visually-hidden") Previous
 
       button(class="carousel-control-next w-auto" type="button" data-bs-target="#testimonial-slide" data-bs-slide="next")
         span(class="theme fs-1" aria-hidden="true")
-          //- | &#11208;
-          | &#11166;
-          //- | &#129066;
-          //- | &#11162;
+          <svg class="bi ms-3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+          </svg>
         span(class="visually-hidden") Next
