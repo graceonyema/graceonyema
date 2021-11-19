@@ -133,22 +133,22 @@
       //-     action=""
       //- )
       form(id="newsletter-form" class="box-container gform")
-        div
-          h3.heading    Stay in touch
-          p   Subscribe to my newsletter
+        //- div
+        h3.heading    Stay In Touch
+        p   Subscribe To My Newsletter
 
-          .d-none
-            input.form-control(type="text" id="name" name="name" value="Client" aria-hidden="true" hidden)
-            input.form-control(type="text" id="message" name="message" value="Newsletter Subscription" aria-hidden="true" hidden)
-            label(class="visually-hidden" for="email") Email
+        .d-none
+          input.form-control(type="text" id="name" name="name" value="Client" aria-hidden="true" hidden)
+          input.form-control(type="text" id="message" name="message" value="Newsletter Subscription" aria-hidden="true" hidden)
+          label(class="visually-hidden" for="email") Email
 
-          .input-group
-            input(type="email" class="form-control" id="email" name="email" required)
-            
-            button(class="btn btn-gold" type="submit" id="submit-btn") Subscribe
-        
+        .input-group
+          input(type="email" class="form-control" id="email" name="email" required)
+          
+          button(class="btn btn-gold" type="submit" id="submit-btn") Subscribe
+      
         //- div(class="")
-        p(id="sub-status" class="alert small m-0" role="alert" aria-live="assertive")
+        p(id="sub-status" class="alert accent small m-0" role="alert" aria-live="assertive")
 
   hr
   .row.row-cols-1.row-cols-sm-2.mt-3.muted.text-sm-center
@@ -158,7 +158,7 @@
     .col
       p
         small Designed by 
-          a(class="link p-0" href="#" target="_blank" rel="noopener" title="Chinedum Onyema") an Owl
+          a(class="link p-0" href="https://conyema.github.io" target="_blank" rel="noopener" title="Chinedum Onyema") Owi
 
   a(id="go-to-top" class="go-to-top btn p-1 btn-gold rounded-circle" href="#main-content" data-visible="true" title="Back to top")
     span( class="visually-hidden")  Back to top

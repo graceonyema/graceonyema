@@ -11,7 +11,7 @@
     "build-pages": "gulp views",
     "build-images": "gulp images",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d web/dist",
+    "deploy": "gh-pages -d dist",
     "dev": "npm-run-all --parallel watch dev-server",
     "dev-server": "set DEBUG=app:* & nodemon app.js",
     "inline-css": "gulp inlineCritical",
