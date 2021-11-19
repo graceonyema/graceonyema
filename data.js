@@ -30,7 +30,8 @@ const data =  {
   location: "Abuja, Nigeria",
   email: "contact@graceonyema.com",
   phone: "+2349135950469",
-  amazon: "https://www.amazon.com/Grace-Onyema/e/B08729YPRY%3Fref=dbs_a_mng_rwt_scns_share",
+  
+  amazon: "https://www.amazon.com/author/graceonyema",
   upwork: "https://www.upwork.com/freelancers/~01a67109311ce9d5aa",
   whatsapp: "https://wa.me/2349135950469",
   linkedin: "https://www.linkedin.com/in/graceonyema",
@@ -38,6 +39,7 @@ const data =  {
   instagram: "https://instagram.com/graceenyioma",
   facebook: "https://facebook.com/grace.onyema",
   // twitter: "#",
+
   about: {
     paragraphs: [
       {text: `Grace Onyema is a Multiple Amazon Bestselling Author, Amazon KDP Consultant, Business Strategist, and a Digital Entrepreneur.`},
@@ -153,7 +155,7 @@ const data =  {
         poster: "digital_products_creation_checklist.jpg",
         price: "Free",
         rating: "5",
-        cta: "Download Free Book"
+        cta: "Download"
       },
       {
         title: "Cash Out Online",
@@ -161,7 +163,7 @@ const data =  {
         poster: "cash_out_online.jpg",
         price: "₦1,499",
         rating: "5",
-        cta: "Get Book"
+        cta: "Get Now"
       },
       {
         title: "Amazon Book Publishing Service (Bundle Package)",
@@ -169,7 +171,7 @@ const data =  {
         poster: "amazon_book_publishing_service.jpg",
         price: "₦25,000",
         rating: "5",
-        cta: "Get Book"
+        cta: "Use This Service"
       },      
     ]
   },
@@ -265,7 +267,7 @@ const data =  {
       orientation: "2"
     },
     {
-      title: "",
+      title: "Amazon Queen",
       category: "",
       poster: "grace_onyema_4.jpg",
       orientation: "3"
@@ -278,8 +280,8 @@ const data =  {
     }
   ],
   ad: {
-    header: "Live Webinar",
-    title: "Building a highly profitable Amazon KDP Business",
+    header: "FREE WEBINAR",
+    title: "Building A Highly Profitable Amazon KDP Business",
     cta: "Register",
     poster: "live_webinar.jpg",
     link: "https://graceonyema.selar.co/pages/webinar"
