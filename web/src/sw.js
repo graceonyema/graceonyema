@@ -1,4 +1,4 @@
-const staticCacheName = 'site-static-v1';
+const staticCacheName = 'site-static-v2';
 const filesToCache = [
   '/',
   '/about',
@@ -8,6 +8,7 @@ const filesToCache = [
   '/styles/index.min.css',
   '/scripts/index.min.js',
   '/favicon.ico',
+  '/assets/icons/logo1.png',
   '/assets/icons/logo2.png',
   '/assets/icons/diagonals1.svg',
   '/assets/icons/diagonals2.svg',

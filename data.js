@@ -25,7 +25,7 @@ const data =  {
   //   small: "logo2.png",
   //   small2x: "logo2.png"
   // },
-  logo1: "favicon.ico",
+  logo1: "logo1.png",
   logo2: "logo2.png",
   location: "Abuja, Nigeria",
   email: "contact@graceonyema.com",

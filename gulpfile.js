@@ -122,7 +122,9 @@ const copy = () => {
   return src([
     'web/src/favicon.ico',
     'web/src/sw.js',
-    'web/src/manifest.json'
+    'web/src/manifest.json',
+    'web/src/sitemap.xml',
+    'web/src/robots.txt'
   ])
   //   Minify root JS files
   .pipe(gulpIf('*.js', uglify()))
