@@ -3,7 +3,11 @@ const pageTopBtn = document.getElementById("go-to-top");
 // const msgForm = document.getElementById('contact-form');
 const msgForms = document.querySelectorAll('.gform');
 // const statusBox = document.getElementById('status');
-// const statusBox = document.getElementById('status');
+
+
+/**
+ * Toggle visibility of the 'go to top' button based on scroll position
+ */
 
 function toggleTopBtn() {
   if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
@@ -16,7 +20,11 @@ function toggleTopBtn() {
 }
 
 
-/** Method for showing notification message**/
+/**
+ *  Shows notification message on target(form) 
+ * @param {string} result - The status of a form's submission
+ * @param {HTMLFormElement} formElem - The submitted form element
+ */
 
 const displayStatus = (result, formElem) => {
   const statusBox = formElem.lastChild;
@@ -82,3 +90,18 @@ msgForms.forEach(form => {
 window.onscroll = () => {
   toggleTopBtn()
 };
+
+/**
+ * Register Service Worker
+ */
+
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('./sw.js')
+  .then(() => {
+      console.log('Service Worker registered')
+  })
+  .catch((error) => {
+    // console.log('Registration Failed', error);
+    console.log('Registration Failed');
+  });
+}

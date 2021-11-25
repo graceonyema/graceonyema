@@ -23,7 +23,8 @@ const siteData = require('./data.js');
 //  Bootstrap links
 const bootstrapCdn = {
   css: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">', 
-  js: '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>'
+  js: '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer></script>'
+  // js: '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>'
 };
 
 const bootstrapLocal = {
@@ -31,10 +32,16 @@ const bootstrapLocal = {
   js: '<script src="/scripts/bootstrap.bundle.min.js" defer></script>'
 };
 
-const clean = () => {
+const emptyDist = () => {
   return del([ 'dist/**/*', '!dist' ]);
 }
 
+// Remove html generated in source during build
+const removeHtmlSrc = () => {
+  return del([ 'web/src/*.html', '!web/src' ]);
+}
+
+// Build HTML from template
 const views = () => {
   return src('web/views/pages/*.pug')
     .pipe(
@@ -186,8 +193,8 @@ const watchFiles = () => {
 }
 
 // build optimized files
-// const build = series(clean, views, respImages, parallel(minifyFiles, copy, minifyImages), inlineCritical);
-const build = series(clean, views, respImages, parallel(minifyFiles, copy, minifyImages));
+// const build = series(emptyDist, views, respImages, parallel(minifyFiles, copy, minifyImages), inlineCritical);
+const build = series(emptyDist, views, respImages, parallel(minifyFiles, copy, minifyImages), removeHtmlSrc);
 const images = series(respImages, minifyImages);
 // const images = series(minifyFiles);
 
