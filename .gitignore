@@ -8,5 +8,6 @@ node_modules
 
 # Other
 archive
+dist
 web/dist
 package-lock.json
