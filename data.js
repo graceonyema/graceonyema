@@ -279,12 +279,19 @@ const data =  {
       orientation: "2"
     }
   ],
+  // ad: {
+  //   header: "Live Webinar",
+  //   title: "Building a highly profitable Amazon KDP Business",
+  //   cta: "Register",
+  //   poster: "live_webinar.jpg",
+  //   link: "https://graceonyema.selar.co/pages/webinar"
+  // }
   ad: {
-    header: "FREE WEBINAR",
-    title: "Building A Highly Profitable Amazon KDP Business",
+    header: "AMAZON KDP BOOTCAMP",
+    title: "Create, Publish & Earn Challenge",
     cta: "Register",
-    poster: "live_webinar.jpg",
-    link: "https://graceonyema.selar.co/pages/webinar"
+    poster: "amazon_kdp_bootcamp.jpg",
+    link: "https://graceonyema.selar.co/cpec"
   }
 }
 
