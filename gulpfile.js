@@ -152,7 +152,7 @@ const minifyImages = () => {
     .pipe(dest('dist/assets'))
 }
 
-// Create respoonsive images
+// Create responsive images
 const respImages = () => {
   return src('web/src/assets/images/**/*')
     .pipe(responsive({
